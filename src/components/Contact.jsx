@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MessageSquare, Send, Mail, CheckCircle, Terminal } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Github = ({ size = 16, className = '' }) => (
   <svg 
@@ -72,35 +73,60 @@ const Contact = () => {
       submitted: false,
       error: false,
       output: [
-        '$ curl -X POST https://api.jayantkaushik.dev/contact \\',
+        '$ curl -X POST https://api.emailjs.com/api/v1.0/email/send \\',
         `  -H "Content-Type: application/json" \\`,
         `  -d '{"name":"${formData.name}","email":"${formData.email}"}'`,
-        'Connecting to server...',
-        'Sending payload [78 bytes]...'
+        'Connecting to EmailJS server...',
+        'Sending payload...'
       ]
     });
 
-    // Simulate sending progress
-    setTimeout(() => {
-      setStatus(prev => ({
-        ...prev,
-        output: [...prev.output, 'Server response: 202 Accepted. Queueing message send...']
-      }));
-    }, 800);
+    // ACTUAL EMAILJS INTEGRATION
+    // --------------------------------------------------
+    // TODO: Create an account at https://www.emailjs.com/
+    // and replace these three strings with your actual IDs
+    const serviceId = 'service_g48hkar';
+    const templateId = 'template_5cfu5sb';
+    const publicKey = 'L1NE6p5LtdsvUSDzu';
+    // --------------------------------------------------
 
-    setTimeout(() => {
+    emailjs.send(
+      serviceId,
+      templateId,
+      {
+        from_name: formData.name,
+        reply_to: formData.email,
+        message: formData.message,
+      },
+      publicKey
+    )
+    .then((response) => {
       setStatus(prev => ({
         ...prev,
         submitting: false,
         submitted: true,
         output: [
           ...prev.output,
+          `Server response: ${response.status} ${response.text}`,
           'OK! Email sent successfully.',
           'Message logged. Thank you for reaching out, Jayant will get back to you shortly!'
         ]
       }));
       setFormData({ name: '', email: '', message: '' });
-    }, 2000);
+    })
+    .catch((error) => {
+      setStatus(prev => ({
+        ...prev,
+        submitting: false,
+        submitted: false,
+        error: true,
+        output: [
+          ...prev.output,
+          `[ERROR] Failed to send email: ${error.text || error.message || 'Unknown error'}`,
+          'Please try again later or email directly.'
+        ]
+      }));
+    });
   };
 
   return (
