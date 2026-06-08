@@ -12,6 +12,9 @@ import {
   Terminal
 } from 'lucide-react';
 
+import avatarUrl from '../assets/avatar.jpg';
+import resumeUrl from '../assets/resume.pdf';
+
 const Github = ({ size = 18 }) => (
   <svg 
     viewBox="0 0 24 24" 
@@ -96,7 +99,7 @@ const Sidebar = ({ activeSection }) => {
           <div className="profile-frame">
             <div className="profile-avatar">
               <img 
-                src="/avatar.jpg" 
+                src={avatarUrl} 
                 alt="Jayant Kaushik" 
                 onError={(e) => {
                   e.target.onerror = null;
@@ -116,7 +119,7 @@ const Sidebar = ({ activeSection }) => {
         </div>
 
         <a 
-          href="/resume.pdf" 
+          href={resumeUrl} 
           download="Jayant_Kaushik_Resume.pdf" 
           className="resume-btn"
           title="Download Resume"

@@ -23,6 +23,9 @@ import Achievements from './components/Achievements';
 import CodingProfiles from './components/CodingProfiles';
 import Contact from './components/Contact';
 
+import avatarPngUrl from './assets/avatar.png';
+import resumePdfUrl from './assets/resume.pdf';
+
 const Github = ({ size = 18 }) => (
   <svg 
     viewBox="0 0 24 24" 
@@ -185,7 +188,7 @@ function App() {
         <div className="mobile-profile">
           <div className="mobile-avatar">
             <img 
-              src="/avatar.png" 
+              src={avatarPngUrl} 
               alt="Jayant Kaushik" 
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               onError={(e) => {
@@ -237,7 +240,7 @@ function App() {
           })}
           <li style={{ marginTop: '0.5rem', borderTop: '1px solid var(--border)', paddingTop: '0.75rem' }}>
             <a 
-              href="/resume.pdf" 
+              href={resumePdfUrl} 
               download="Jayant_Kaushik_Resume.pdf"
               className="resume-btn"
               style={{ width: 'auto', justifyContent: 'center' }}
