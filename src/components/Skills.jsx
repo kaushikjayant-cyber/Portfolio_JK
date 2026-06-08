@@ -33,7 +33,7 @@ const Skills = () => {
     {
       title: 'AI & Data Engineering',
       icon: BarChart3,
-      skills: ['Pandas', 'NumPy', 'Matplotlib', 'NLP (Natural Language Processing)', 'Transformers (DistilBERT/RoBERTa)']
+      skills: ['Pandas', 'NumPy', 'Matplotlib', 'NLP', 'Transformers']
     },
     {
       title: 'Developer Tools',

@@ -6,26 +6,26 @@ const Experience = () => {
     {
       company: 'Kistechnosoftware',
       role: 'Software Developer Intern',
-      duration: 'Jan 2025 - Present', // reasonable estimate for student timeline
+      duration: 'Jan 2025 - Present',
+      overview: 'Kistechnosoftware is a technology firm specializing in web applications and cloud integrations. As an intern, I focus on full-stack development, building backend systems, and optimizing web interfaces.',
       highlights: [
-        'Built dynamic web applications using Flask web framework and Python backend scripting.',
-        'Integrated Firebase for real-time database persistence, cloud storage, and hosting configurations.',
-        'Implemented secure OAuth Authentication mechanisms to manage user logins and profile management.',
-        'Designed and optimized frontend components with HTML, CSS, and JavaScript, ensuring responsive layouts across devices.'
+        'Developed dynamic web applications using Flask and Python backend scripting.',
+        'Integrated Firebase for real-time data persistence and cloud hosting.',
+        'Implemented secure OAuth authentication to manage user sessions and profiles.'
       ],
-      technologies: ['Flask', 'Python', 'Firebase', 'OAuth', 'JavaScript', 'HTML5', 'CSS3']
+      technologies: ['Flask', 'Python', 'Firebase', 'OAuth', 'JavaScript']
     },
     {
       company: 'Infoshore',
       role: 'Python Developer Intern',
       duration: 'Jun 2024 - Dec 2024',
+      overview: 'Infoshore provides software and data processing solutions. During my tenure, I focused on designing automated workflows and building robust data ingestion pipelines.',
       highlights: [
-        'Designed and developed python automation frameworks to speed up system testing and environment configs.',
-        'Created custom ETL (Extract, Transform, Load) pipelines to ingest, clean, and process structured and semi-structured datasets.',
-        'Optimized data processing tasks using Pandas and NumPy, reducing query latencies and execution times.',
-        'Automated reports delivery systems via cron jobs and Python mail modules, eliminating manual compiling tasks.'
+        'Created custom ETL pipelines to clean and process diverse datasets.',
+        'Optimized data processing tasks using Pandas and NumPy to reduce query latency.',
+        'Automated report delivery systems using cron jobs and Python mail modules.'
       ],
-      technologies: ['Python', 'ETL Pipelines', 'Pandas', 'NumPy', 'Automation Scripts', 'Git']
+      technologies: ['Python', 'ETL', 'Pandas', 'NumPy', 'Automation']
     }
   ];
 
@@ -50,13 +50,17 @@ const Experience = () => {
                   <span style={{ verticalAlign: 'middle' }}>{exp.duration}</span>
                 </div>
               </div>
+              
+              <p style={{ color: 'var(--muted)', fontSize: '0.9rem', marginBottom: '1rem', lineHeight: '1.5' }}>
+                {exp.overview}
+              </p>
+
               <ul className="timeline-list">
                 {exp.highlights.map((highlight, hIdx) => (
                   <li key={hIdx}>{highlight}</li>
                 ))}
               </ul>
               <div style={{ marginTop: '1rem' }}>
-                <span className="project-meta-lbl" style={{ display: 'block', marginBottom: '0.5rem' }}>Technologies Used</span>
                 <div className="project-tech-list">
                   {exp.technologies.map((tech, tIdx) => (
                     <span key={tIdx} className="project-tech-badge">{tech}</span>

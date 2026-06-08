@@ -49,30 +49,11 @@ const ProjectCard = ({ project }) => {
         <p className="project-description">{project.description}</p>
         
         <div className="project-meta-item">
-          <div className="project-meta-lbl">Problem Solved</div>
-          <div className="project-meta-val">{project.problem}</div>
-        </div>
-
-        <div className="project-meta-item">
-          <div className="project-meta-lbl">Architecture Overview</div>
-          <div className="project-architecture">
-            <span style={{ color: 'var(--accent)', fontWeight: 'bold' }}>&gt;_</span>
-            <span>{project.architecture}</span>
-          </div>
-        </div>
-
-        <div className="project-meta-item">
-          <div className="project-meta-lbl">Key Features</div>
           <ul className="timeline-list" style={{ marginTop: '0.25rem', marginBottom: '0.5rem' }}>
             {project.features.map((feature, fIdx) => (
               <li key={fIdx} style={{ fontSize: '0.8rem', paddingLeft: '1rem' }}>{feature}</li>
             ))}
           </ul>
-        </div>
-
-        <div className="project-meta-item">
-          <div className="project-meta-lbl">Results / Impact</div>
-          <div className="project-meta-val" style={{ color: 'var(--text-white)' }}>{project.impact}</div>
         </div>
 
         <div className="project-meta-item" style={{ marginTop: '0.75rem' }}>

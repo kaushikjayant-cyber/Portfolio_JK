@@ -10,20 +10,7 @@ const About = () => {
       </h2>
       <div className="about-card">
         <p>
-          I am a <span className="highlight-text">B.Tech Computer Science and Engineering</span> student at{' '}
-          <span className="highlight-text">Swami Keshvanand Institute of Technology (SKIT), Jaipur</span>. 
-          My academic training combined with hands-on software development experience has prepared me to tackle complex engineering problems.
-        </p>
-        <p>
-          I have a deep passion for <span className="highlight-text">Software Engineering</span>,{' '}
-          <span className="highlight-text">Full-Stack Web Development</span>, and <span className="highlight-text">AI/ML</span>. 
-          I love analyzing problem spaces, designing clean system architectures, and writing robust code that solves real-world challenges.
-        </p>
-        <p>
-          A strong proponent of algorithmic thinking, I have solved <span className="highlight-text">550+ Data Structures & Algorithms (DSA) problems</span> across platforms like LeetCode and GeeksForGeeks. This foundation enables me to design highly optimized solutions with performance and efficiency in mind.
-        </p>
-        <p>
-          Currently, I am actively seeking <span className="highlight-text">Software Engineering, Full-Stack Development, and AI/ML opportunities</span> where I can apply my experience in Python/JavaScript automation, web frameworks, database administration, and natural language processing to build impactful software systems.
+          I am a Computer Science student at SKIT Jaipur with a strong interest in Software Development, Full-Stack Engineering, and Artificial Intelligence. I enjoy building scalable applications that solve real-world problems and improve user experiences. Through internships and personal projects, I have gained hands-on experience with React, Node.js, MongoDB, Python, and modern development practices. I have solved 550+ DSA problems, which has strengthened my problem-solving and analytical skills. I am constantly learning new technologies and actively seeking opportunities to contribute to impactful software products while growing as an engineer.
         </p>
       </div>
     </section>

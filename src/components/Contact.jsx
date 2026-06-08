@@ -73,9 +73,6 @@ const Contact = () => {
       submitted: false,
       error: false,
       output: [
-        '$ curl -X POST https://api.emailjs.com/api/v1.0/email/send \\',
-        `  -H "Content-Type: application/json" \\`,
-        `  -d '{"name":"${formData.name}","email":"${formData.email}"}'`,
         'Connecting to EmailJS server...',
         'Sending payload...'
       ]
@@ -208,10 +205,7 @@ const Contact = () => {
                 <div style={{ color: 'var(--success)', marginBottom: '1rem' }}>
                   <CheckCircle size={48} style={{ margin: '0 auto' }} />
                 </div>
-                <h3 style={{ color: 'var(--text-white)', marginBottom: '0.5rem' }}>Message Transmitted!</h3>
-                <p style={{ fontSize: '0.85rem', color: 'var(--muted)', marginBottom: '1.5rem' }}>
-                  Your details have been recorded. Terminal response is shown below.
-                </p>
+                <h3 style={{ color: 'var(--text-white)', marginBottom: '1.5rem' }}>Message sent successfully</h3>
                 <button 
                   onClick={() => setStatus(prev => ({ ...prev, submitted: false, output: [] }))} 
                   className="project-action-btn"
@@ -219,43 +213,6 @@ const Contact = () => {
                 >
                   Send another message
                 </button>
-              </div>
-            )}
-
-            {status.output.length > 0 && (
-              <div 
-                style={{ 
-                  marginTop: '1.5rem', 
-                  backgroundColor: 'var(--bg)', 
-                  border: '1px solid var(--border)', 
-                  borderRadius: '6px',
-                  padding: '1rem',
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '0.8rem',
-                  color: 'var(--muted)',
-                  textAlign: 'left',
-                  maxHeight: '180px',
-                  overflowY: 'auto'
-                }}
-              >
-                {status.output.map((line, lIdx) => (
-                  <div 
-                    key={lIdx} 
-                    style={{ 
-                      color: line.startsWith('$') 
-                        ? 'var(--accent)' 
-                        : line.startsWith('[ERROR]') 
-                          ? 'var(--danger)' 
-                          : line.includes('OK!') 
-                            ? 'var(--success)' 
-                            : 'var(--text)',
-                      marginBottom: '0.25rem',
-                      whiteSpace: 'pre-wrap'
-                    }}
-                  >
-                    {line}
-                  </div>
-                ))}
               </div>
             )}
           </div>

@@ -9,48 +9,39 @@ const Projects = () => {
     {
       name: 'SyncForge',
       category: 'fullstack',
-      description: 'Real-time collaborative coding platform supporting room-based code sharing, isolated runtime environment execution, and communication.',
-      problem: 'Developers and students lack high-speed collaborative workspaces to program, run, and discuss code online without configuration overhead.',
-      architecture: 'React (WebSockets) <-> Node.js / Express API <-> MongoDB & Judge0 Sandbox Environment',
+      description: 'A real-time collaborative coding platform designed to help developers code together seamlessly. The platform supports shared workspaces, secure authentication, and code execution within the browser.',
       features: [
-        'Real-time editor sync using WebSockets with user cursor markers.',
-        'Code compilation for multiple languages via Judge0 compiler integration.',
-        'Dynamic chat panel, active participant rosters, and instant room generation.'
+        'Live code synchronization using Socket.io',
+        'Judge0-powered code execution',
+        'Google OAuth and JWT authentication'
       ],
-      impact: 'Enables real-time code collaboration with latencies under 50ms, eliminating setup delays for remote technical discussions.',
-      technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Socket.io', 'Monaco Editor'],
+      technologies: ['React.js', 'Node.js', 'MongoDB', 'Socket.io'],
       githubUrl: 'https://github.com/kaushikjayant-cyber/syncforge',
       demoUrl: 'https://syncforge.vercel.app/'
     },
     {
       name: 'HireBlind',
       category: 'aiml',
-      description: 'AI-powered anonymous resume screening application promoting unbiased vetting through PII removal and NLP scoring.',
-      problem: 'Unconscious bias in human resume vetting compromises equity and limits diverse pipelines during preliminary application filters.',
-      architecture: 'React Client <-> Express API Gateway <-> Python Flask NLP Pipeline & MongoDB',
+      description: 'An AI-powered recruitment platform that anonymizes resumes and ranks candidates based on job requirements. The system helps reduce bias while improving hiring efficiency.',
       features: [
-        'Algorithmic masking of Personally Identifiable Information (PII) using regex and SpaCy.',
-        'Semantic parsing and role similarity ranking utilizing pre-trained word embeddings.',
-        'Visual skill-gap radar charts and transparent, explainable scoring criteria.'
+        'Resume anonymization using NLP',
+        'AI-based candidate ranking',
+        'Explainable screening insights'
       ],
-      impact: 'Reduces manual shortlisting times by 60% while increasing minority developer progression into initial interview rounds.',
-      technologies: ['Node.js', 'Express.js', 'MongoDB', 'Python', 'Flask', 'SpaCy NLP', 'React.js'],
+      technologies: ['Node.js', 'MongoDB', 'Python', 'NLP'],
       githubUrl: 'https://github.com/kaushikjayant-cyber/hireblind',
       demoUrl: 'https://hireblind.vercel.app/'
     },
     {
-      name: 'WhatsApp-Chat-Insight-Engine',
+      name: 'WhatsApp Chat & Sentiment Insight Engine',
       category: 'aiml',
-      description: 'Data analytics and sentiment profiling system designed to analyze WhatsApp text dumps and generate interactive dashboards.',
-      problem: 'Messaging backups contain rich emotional and interaction logs that are inaccessible and difficult to aggregate without analytics scripts.',
-      architecture: 'Text Parser Module -> Spacy/Tokenizer -> DistilBERT & XLM-RoBERTa models -> Pandas -> Matplotlib Output',
+      description: 'A data analytics platform that processes WhatsApp conversations and generates insights using NLP and transformer models. It helps users understand sentiment trends and communication patterns.',
       features: [
-        'Robust regex parsing accommodating varying device date formats and language logs.',
-        'Sentiment profiling using pre-trained DistilBERT classifiers.',
-        'Activity statistics reporting hourly spikes, monthly cycles, and active participant metrics.'
+        'Sentiment and emotion analysis',
+        'Interactive analytics dashboard',
+        'Multilingual chat processing'
       ],
-      impact: 'Extracts conversational metrics with 92% classification accuracy, compiling clean summaries into downloadable spreadsheets.',
-      technologies: ['Python', 'NLP', 'DistilBERT', 'XLM-RoBERTa', 'Pandas', 'Matplotlib'],
+      technologies: ['Python', 'NLP', 'DistilBERT', 'Pandas'],
       githubUrl: 'https://github.com/kaushikjayant-cyber/whatsapp-sentiment-insight',
       demoUrl: 'https://whatsapp-sentiment.vercel.app/'
     }
